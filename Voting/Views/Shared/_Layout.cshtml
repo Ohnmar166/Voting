@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery-3.5.1.min.js"></script>
+    <script src="~/Content/bootstrap.min.js"></script>
+    <style>
+        a {
+            color: #ffffff;
+        }
+
+        .rounded-pill{
+            color:#fff;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Navbar -->
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+        <img src="~/Content/img/Vote1.png" style="height:auto;width:63px;padding:0 0 0 1rem;" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+                aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index","Home")">Voting </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#fff;">
+                        Other
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="@Url.Action("Index","Home")">Home</a>
+                        <a class="dropdown-item" href="@Url.Action("About","Home")">About Us</a>
+                        <a class="dropdown-item" href="@Url.Action("Contact","Home")">Contact</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li>
+                    <button class="btn btn-outline-info rounded-pill" type="button" style="color:#ffffff;">Button</button>
+                </li>&nbsp;&nbsp;
+                <li class="nav-item"><a class="btn rounded-pill btn-outline-info py-sm-2 px-3" href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+                @*<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#my-modal">Log in</a></li>*@
+                &nbsp;&nbsp;
+
+            </ul>
+        </div>
+    </nav>
+    <!--/.Navbar -->
+    <!--Modal: Login / Register Form-->
+    <div class="container d-flex justify-content-center">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content p-4">
+                    <button type="button" class="close x" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    <div class="modal-header border-0 mb-2">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <em>Voting</em>
+                        </h5>
+                        <img src="~/Content/img/Vote1.png" class="navbar-brand" style="width:63px;padding-left:1rem;height:auto;" />
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="mb-4 title">Login Account</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control p-0" required style="box-shadow: none;border-radius:0px">
+                            <label class="form-control-placeholder p-0" for="name lbl">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="email" class="form-control p-0" required style="box-shadow: none;border-radius:0px">
+                            <label class="form-control-placeholder p-0" for="name">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-control p-0" required style="box-shadow: none;border-radius:0px">
+                            <label class="form-control-placeholder p-0" for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 mb-4"> <button type="button" class="btn signin col-6 col-md-6" data-dismiss="modal">Login</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @*<img src="~/Content/img/vote4.png" />*@
+        @RenderBody()
+        <br /><br /><br /><br /><br /><br /><br />
+
+        <hr />
+        <footer class="footer">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+</body>
+</html>
